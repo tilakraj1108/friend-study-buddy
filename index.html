@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friend Study Buddy - Your Simple Study Companion</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font for clean modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">Friend Study Buddy</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#planner">Planner</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#revision">Revision</a></li>
+        <li><a href="#motivation">Motivation</a></li>
+      </ul>
+      <!-- Dark Mode Toggle Button -->
+      <button id="themeToggleBtn" class="btn btn-secondary" aria-label="Toggle Dark Mode">
+        🌙 Dark Mode
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Friend Study Buddy</h1>
+        <p class="subtitle">“A simple study companion for you and your friends.”</p>
+        <a href="#planner" class="btn btn-primary hero-btn">Start Studying 🚀</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ================= FEATURE 1: STUDY PLANNER ================= -->
+      <section id="planner" class="card">
+        <div class="card-header">
+          <h2>📅 Feature 1: Study Planner</h2>
+          <p>Generate a customized step-by-step breakdown for your study session.</p>
+        </div>
+        
+        <form id="studyPlanForm" class="form-grid">
+          <div class="form-group">
+            <label for="subjectInput">Subject</label>
+            <input type="text" id="subjectInput" placeholder="e.g., DSA, Web Dev, Math" required />
+          </div>
+
+          <div class="form-group">
+            <label for="topicInput">Topic</label>
+            <input type="text" id="topicInput" placeholder="e.g., Arrays, CSS Flexbox" required />
+          </div>
+
+          <div class="form-group">
+            <label for="timeInput">Study Time</label>
+            <select id="timeInput" required>
+              <option value="1">1 Hour</option>
+              <option value="2" selected>2 Hours</option>
+              <option value="3">3 Hours</option>
+              <option value="4">4 Hours</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="difficultyInput">Difficulty Level</label>
+            <select id="difficultyInput" required>
+              <option value="Beginner" selected>Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Create Study Plan 📝</button>
+        </form>
+
+        <!-- Dynamic Output for Study Plan -->
+        <div id="planResult" class="result-box hidden"></div>
+      </section>
+
+      <!-- ================= FEATURE 2: QUICK QUIZ ================= -->
+      <section id="quiz" class="card">
+        <div class="card-header">
+          <h2>🧠 Feature 2: Quick CS Quiz</h2>
+          <p>Test your basic Computer Science knowledge with 5 quick questions.</p>
+        </div>
+
+        <form id="quizForm">
+          <div id="quizContainer" class="quiz-questions">
+            <!-- Questions rendered by JavaScript -->
+          </div>
+          <button type="submit" class="btn btn-primary full-width mt-3">Submit Quiz ✅</button>
+        </form>
+
+        <!-- Dynamic Output for Quiz Score -->
+        <div id="quizResult" class="result-box hidden"></div>
+      </section>
+
+      <!-- ================= FEATURE 3: QUICK REVISION ================= -->
+      <section id="revision" class="card">
+        <div class="card-header">
+          <h2>📖 Feature 3: Quick Revision</h2>
+          <p>Select a subject topic to get instant, concise summary notes.</p>
+        </div>
+
+        <div class="revision-control">
+          <label for="topicSelect">Select Topic:</label>
+          <div class="select-row">
+            <select id="topicSelect">
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="DSA">DSA</option>
+            </select>
+            <button id="showRevisionBtn" class="btn btn-primary">Show Revision 🔍</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Output for Revision Notes -->
+        <div id="revisionResult" class="result-box">
+          <p class="placeholder-text">Click "Show Revision" to view revision points.</p>
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 4: MOTIVATION ================= -->
+      <section id="motivation" class="card motivation-card">
+        <div class="card-header">
+          <h2>✨ Feature 4: Daily Motivation</h2>
+          <p>Need a boost? Get a fresh dose of inspiration whenever you feel tired.</p>
+        </div>
+
+        <div class="quote-display">
+          <span class="quote-icon">“</span>
+          <p id="quoteText">Small progress every day adds up.</p>
+          <span class="quote-icon">”</span>
+        </div>
+
+        <button id="motivateBtn" class="btn btn-primary">Motivate Me 🌟</button>
+      </section>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>Built with ❤️ for students & friends using HTML, CSS & Vanilla JavaScript.</p>
+    <p class="footer-small">Keep learning, keep growing!</p>
+  </footer>
+
+  <!-- Connect JavaScript file at the end of body -->
+  <script src="script.js"></script>
+</body>
+</html>
